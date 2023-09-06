@@ -6,7 +6,11 @@
     background-color: #333;
     color: #fff;
     height: 70px; 
-    position: relative;
+    position: fixed;    /* Position fixed pour rendre le header toujours visible */
+    top: 0;             /* Fixe le header en haut */
+    left: 0;            /* Fixe le header à gauche */
+    right: 0;           /* Fixe le header à droite */
+    z-index: 9999;      /* S'assure que le header reste au-dessus des autres éléments */
 }
 
 .branding {
@@ -52,12 +56,13 @@
     background-color: #333; 
     color: #fff;            
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem;  
     border-radius: 5px;     
     cursor: pointer;
     transition: background-color 0.2s ease;
     margin-left: 10px;
 }
+
 
 .dark-mode-toggle:hover {
     background-color: #444; 

@@ -30,8 +30,9 @@ function Header() {
             </div>
             <nav className="navigation">
                 <a href="#" onClick={() => scrollToSection('home-section')} className="link">Accueil</a>
-                <a href="#" onClick={() => scrollToSection('projects-section')} className="link">Projets</a>
                 <a href="#" onClick={() => scrollToSection('about-section')} className="link">À propos</a>
+                <a href="#" onClick={() => scrollToSection('projects-section')} className="link">Projets</a>
+                <a href="#" onClick={() => scrollToSection('contact-section')} className="link">Contact</a>
                 {/* Vous pouvez ajouter d'autres liens ici pour les autres sections */}
             </nav>
             <button className="dark-mode-toggle" onClick={toggleDarkMode}>

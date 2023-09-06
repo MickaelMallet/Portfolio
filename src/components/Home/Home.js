@@ -4,6 +4,8 @@ import Projects from '../Projects/Projects';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import Contact from '../Contact/Contact';
+import Skills from '../Skills/Skills';
 import './Home.css';
 
 const Home = () => {
@@ -29,15 +31,25 @@ const Home = () => {
 
             <section id="home-section" className="fullpage-section">
                 <div className="intro-section">
-                    <h1 className="page-title">Hey, Listen !</h1>
+                    <h1 className="page-title">"Hello There"</h1>
                     <p>{text}<span className="blinking-cursor">|</span></p>
                 </div>
+            </section>
+            
+            <section id="skills-section" className="fullpage-section">
+                <div className="intro-section">
+                    <Skills/>
+                </div>
+
             </section>
             <section id="about-section" className="fullpage-section">
                 <About />
             </section>
             <section id="projects-section" className="fullpage-section">
                 <Projects />
+            </section>
+            <section id="contact-section" className="fullpage-section">
+                <Contact />
             </section>
             <Footer />
 

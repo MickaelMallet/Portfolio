@@ -11,28 +11,27 @@
 }
 
 .home-container {
-    padding: 4rem 2rem;
+    padding: 10rem 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-top:900px ;
 }
 
 .intro-section {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-top: 10rem;
 }
 
 .intro-section h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 6rem;
     color: #333;  /* Couleur par défaut pour le light mode */
 }
 
-.home-container.dark-mode .intro-section h1 {
+.main-container.dark-mode .intro-section h1 {
     color: #fff;  /* Couleur pour le dark mode */
 }
 
 .intro-section p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     line-height: 1.6;
 }
 
@@ -40,7 +39,7 @@
     animation: blink 1s infinite;
 }
 .fullpage-section {
-    min-height: 100vh; /* Fait en sorte que chaque section prenne toute la hauteur de la fenêtre */
+    min-height: 40vh;
     width: 100%;
     overflow: hidden; /* Pour éviter tout débordement inattendu */
 }

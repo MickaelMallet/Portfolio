@@ -5,12 +5,21 @@ import Home from './components/Home/Home';
 import './App.css';
 
 const App = () => {
-    const [theme, setTheme] = useState('light'); // 'light' comme valeur par défaut
+    const [theme, setTheme] = useState('light');
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const currentTheme = localStorage.getItem('theme') || 'light'; 
         setTheme(currentTheme);
         document.body.setAttribute('data-theme', currentTheme);
+    }, []);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
     }, []);
 
     const toggleTheme = () => {
@@ -24,16 +33,26 @@ const App = () => {
             document.body.removeAttribute('data-theme');
         }
     }
+
     return (
-      <DarkModeProvider>
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />             
-            </Routes>
-        </Router>
-      </DarkModeProvider>
+        <DarkModeProvider>
+            {isLoading ? (
+                <div className="preloader">
+                    <video width="100%" height="100%" autoPlay loop muted>
+                        <source src="/preloader.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            ) : (
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<Home />} />             
+                    </Routes>
+                </Router>
+            )}
+        </DarkModeProvider>
     );
 }
 
 export default App;
+
 
