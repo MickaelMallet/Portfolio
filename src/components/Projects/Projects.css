@@ -1,0 +1,103 @@
+.projects-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.project-item {
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 300px;
+    transition: transform 0.3s;
+}
+.project-logo {
+    width: 100px;  
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-links a,
+.project-item button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #343a40;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.project-links a:hover,
+.project-item button:hover {
+    background-color: #4a81c3;
+}
+
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* s'assurer que la modale est au-dessus des autres éléments */
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+.game-rules {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.game-rules h3 {
+    margin-bottom: 10px;
+}
+.tech-logos {
+    display: flex;
+    gap: 15px; /* Espace entre les logos */
+    margin-top: 10px; /* Espace entre la description et les logos */
+}
+
+.tech-logo {
+    width: 30px; /* Largeur du logo */
+    height: auto; /* Hauteur basée sur la largeur pour garder les proportions */
+    filter: grayscale(100%); /* Par défaut en niveaux de gris */
+    transition: filter 0.3s; /* Transition pour le hover */
+}
+
+.tech-logo:hover {
+    filter: grayscale(0%); /* Restaurer les couleurs originales au survol */
+}
+
+/* Styles par défaut pour le mode clair */
+.modal-content {
+    background-color: #fff;
+    color: #000;
+    /* autres styles... */
+}
+
+

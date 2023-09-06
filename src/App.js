@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import DarkModeProvider from './DarkModeContext';
+import Home from './components/Home/Home';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [theme, setTheme] = useState('light'); // 'light' comme valeur par défaut
+
+    useEffect(() => {
+        const currentTheme = localStorage.getItem('theme') || 'light'; 
+        setTheme(currentTheme);
+        document.body.setAttribute('data-theme', currentTheme);
+    }, []);
+
+    const toggleTheme = () => {
+        if (theme === 'light') {
+            setTheme('dark');
+            localStorage.setItem('theme', 'dark');
+            document.body.setAttribute('data-theme', 'dark');
+        } else {
+            setTheme('light');
+            localStorage.setItem('theme', 'light');
+            document.body.removeAttribute('data-theme');
+        }
+    }
+    return (
+      <DarkModeProvider>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />             
+            </Routes>
+        </Router>
+      </DarkModeProvider>
+    );
 }
 
 export default App;
+
