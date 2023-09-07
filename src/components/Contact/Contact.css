@@ -2,13 +2,13 @@
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: left; /* change from center to left */
+    text-align: left; 
 }
 
 .contact-items {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* change from center to flex-start */
+    align-items: flex-start; 
 }
 
 .contact-item {
@@ -35,4 +35,41 @@
 .fullpage-section.dark-mode .contact-item span,
 body.dark-mode #contact-section .contact-item span {
     color: #fff;
+}
+/* ... Votre CSS existant ... */
+
+/* Styles pour les écrans tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .contact-container {
+        padding: 3rem 1.5rem; /* Ajustement du padding */
+    }
+
+    .contact-item {
+        font-size: 1.4rem; /* Augmentation de la taille de la police pour une meilleure visibilité */
+    }
+
+    .contact-icon {
+        width: 28px; 
+        height: 28px; 
+    }
+}
+
+/* Styles pour les écrans mobiles */
+@media screen and (max-width: 767px) {
+    .contact-container {
+        padding: 2rem 1rem; /* Réduction des paddings */
+    }
+
+    .contact-items {
+        align-items: center; /* Centrage des items sur mobile pour un meilleur rendu */
+    }
+
+    .contact-item {
+        font-size: 1.6rem; /* Augmentation plus prononcée de la taille de la police */
+    }
+
+    .contact-icon {
+        width: 32px; 
+        height: 32px; 
+    }
 }

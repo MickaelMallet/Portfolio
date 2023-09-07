@@ -12,6 +12,11 @@ import CssLogo from '../../assets/CssLogo.png';
 import HtmlLogo from '../../assets/HtmlLogo.png';
 import NodeLogo from '../../assets/NodeLogo.svg';
 import SpockLogo from '../../assets/SpockLogo.jpg';
+import TsLogo from '../../assets/TsLogo.svg';
+import VueLogo from '../../assets/VueLogo.png';
+import ConverterLogo from '../../assets/ConverterLogo.svg';
+import KanbanLogo from '../../assets/KanbanLogo.png';
+import PokeLogo from '../../assets/PokeLogo.svg.png';
 import './Projects.css';
 
 const Projects = () => {
@@ -29,11 +34,25 @@ const Projects = () => {
             members: [" Whitney Toniolo ", " Jean-Marie Lapernat ", " Kilian Thoraval ", " Mickael Mallet "]
         },
         {
-            title: "Twitch Clone",
-            logo: LogoTwitch,
-            description: "Un clone de Twitch réalisé comme une introduction à certaines technologies que je souhaitais explorer. Il m'a permis de me familiariser avec des outils tels que Next.js, Tailwind.css, NextAuth, React-Icons et HeadlessUI.",  
-            linkRepo: "https://github.com/MickaelMallet/Twitch-clone",
-            technologies: [TailwindLogo, NextjsLogo, HeadlessLogo],
+            title: "O'Kanban",
+            logo: KanbanLogo,
+            description: "Okanban est une application de gestion de tâches de style Trello. Elle permet aux utilisateurs de créer, gérer et suivre leurs tâches dans un format de tableau Kanban.",
+            technologies: [ReactLogo, CssLogo, JsLogo],
+            linkRepo: "https://github.com/MickaelMallet/O-Kanban",
+        },
+        {
+            title: "Pokedex Vue/TS",
+            logo: PokeLogo,
+            description: "Un Pokedex simple réalisé avec Vue 3, TypeScript et Vite. Ce projet a été conçu comme une initiation aux technologies utilisées.",
+            technologies: [TsLogo, VueLogo, CssLogo],
+            linkRepo: "https://github.com/MickaelMallet/Pokedex-Vue-TS",
+        },
+        {
+            title: "Converter",
+            logo: ConverterLogo,
+            description: "Ce projet est un convertisseur de monnaie simple et efficace construit avec React. Il permet aux utilisateurs de convertir des valeurs entre différentes devises en temps réel.",
+            technologies: [ReactLogo, CssLogo, JsLogo],
+            linkRepo: "https://github.com/MickaelMallet/Converter",
         },
         {
             title: "Infinite Scroll",
@@ -56,7 +75,13 @@ const Projects = () => {
             technologies: [HtmlLogo, CssLogo, JsLogo],
             linkRepo: "https://github.com/MickaelMallet/Pierre-Feuille-Spock", 
         },
-
+        {
+            title: "Twitch Clone",
+            logo: LogoTwitch,
+            description: "Un clone de Twitch réalisé comme une introduction à certaines technologies que je souhaitais explorer. Il m'a permis de me familiariser avec des outils tels que Next.js, Tailwind.css, NextAuth, React-Icons et HeadlessUI.",  
+            linkRepo: "https://github.com/MickaelMallet/Twitch-clone",
+            technologies: [TailwindLogo, NextjsLogo, HeadlessLogo],
+        },
     ];
 
     const handleOpenModal = (project) => {
@@ -103,7 +128,8 @@ const Projects = () => {
                 </div>
             )}
             
-            {activeProject.logo && <img src={activeProject.logo} alt={activeProject.title} />}
+            {activeProject.logo && <img src={activeProject.logo} alt={activeProject.title} className="project-modal-logo" />}
+
 
             <div className="project-links">
                 {activeProject.linkSite && 

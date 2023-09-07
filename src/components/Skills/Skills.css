@@ -31,6 +31,7 @@
     stroke-linecap: round;
     animation: progress 1s ease-out forwards;
 }
+
 .skill-container svg image {
     filter: grayscale(100%);
     transition: filter 0.3s ease-in-out;
@@ -43,5 +44,29 @@
 @keyframes progress {
     0% {
         stroke-dasharray: 0 100;
+    }
+}
+
+/* Styles pour les écrans mobiles */
+@media screen and (max-width: 767px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Deux compétences par ligne */
+    }
+
+    .circular-chart {
+        width: 120px;  /* Réduire la taille des graphiques circulaires */
+        height: 120px;
+    }
+}
+
+/* Styles pour les écrans tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr); /* Trois compétences par ligne */
+    }
+
+    .circular-chart {
+        width: 135px;  /* Taille intermédiaire pour les graphiques circulaires */
+        height: 135px;
     }
 }

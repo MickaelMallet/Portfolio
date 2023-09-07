@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DarkModeContext } from '../../DarkModeContext';
-import profileImage from '../../assets/PicsMika.png';
+import profileImage from '../../assets/PicsMika.svg';
 import './Header.css';
 
 function Header() {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+    const [menuOpen, setMenuOpen] = useState(false); 
 
     useEffect(() => {
         if (darkMode) {
@@ -21,20 +22,16 @@ function Header() {
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
         }
+        setMenuOpen(false); // Fermer le menu après avoir cliqué sur un lien
     };
 
     return (
         <header className="header-container">
+        <div className="top-controls">
+            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
             <div className="branding">
                 <img src={profileImage} alt="Mika's Portfolio" className="profile-image"/>
             </div>
-            <nav className="navigation">
-                <a href="#" onClick={() => scrollToSection('home-section')} className="link">Accueil</a>
-                <a href="#" onClick={() => scrollToSection('about-section')} className="link">À propos</a>
-                <a href="#" onClick={() => scrollToSection('projects-section')} className="link">Projets</a>
-                <a href="#" onClick={() => scrollToSection('contact-section')} className="link">Contact</a>
-                {/* Vous pouvez ajouter d'autres liens ici pour les autres sections */}
-            </nav>
             <button className="dark-mode-toggle" onClick={toggleDarkMode}>
                 {darkMode
                     ? (
@@ -43,13 +40,9 @@ function Header() {
                             <rect x="152.994" y="58.921" transform="matrix(0.3827 0.9239 -0.9239 0.3827 168.6176 -118.5145)" width="40.001" height="16" />
                             <rect x="46.9" y="164.979" transform="matrix(0.9239 0.3827 -0.3827 0.9239 71.29 -12.4346)" width="40.001" height="16" />
                         <rect x="46.947" y="315.048" transform="matrix(0.9239 -0.3827 0.3827 0.9239 -118.531 50.2116)" width="40.001" height="16" />
-
                         <rect x="164.966" y="409.112" transform="matrix(-0.9238 -0.3828 0.3828 -0.9238 168.4872 891.7491)" width="16" height="39.999" />
-
                         <rect x="303.031" y="421.036" transform="matrix(-0.3827 -0.9239 0.9239 -0.3827 50.2758 891.6655)" width="40.001" height="16" />
-
                         <rect x="409.088" y="315.018" transform="matrix(-0.9239 -0.3827 0.3827 -0.9239 701.898 785.6559)" width="40.001" height="16" />
-
                         <rect x="409.054" y="165.011" transform="matrix(-0.9239 0.3827 -0.3827 -0.9239 891.6585 168.6574)" width="40.001" height="16" />
                         <rect x="315.001" y="46.895" transform="matrix(0.9238 0.3828 -0.3828 0.9238 50.212 -118.5529)" width="16" height="39.999" />
                         <path d="M248,88c-88.224,0-160,71.776-160,160s71.776,160,160,160s160-71.776,160-160S336.224,88,248,88z M248,392
@@ -79,6 +72,14 @@ function Header() {
                     )
                 }
             </button>
+        </div>
+            <nav className={`navigation ${menuOpen ? 'open' : ''}`}>
+                <a href="#" onClick={() => scrollToSection('home-section')} className="link">Accueil </a>
+                <a href="#" onClick={() => scrollToSection('about-section')} className="link">À propos</a>
+                <a href="#" onClick={() => scrollToSection('projects-section')} className="link">Projets</a>
+                <a href="#" onClick={() => scrollToSection('contact-section')} className="link">Contact</a>
+                
+            </nav>
         </header>
     );
 }

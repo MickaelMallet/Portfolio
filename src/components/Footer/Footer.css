@@ -9,3 +9,18 @@
     width: 100%;
     z-index: 1000;
 }
+/* Styles pour les écrans tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .footer {
+        padding: 0.8rem 0; 
+        font-size: 0.9rem; /* ajustement de la taille de police pour une meilleure visibilité */
+    }
+}
+
+/* Styles pour les écrans mobiles */
+@media screen and (max-width: 767px) {
+    .footer {
+        padding: 0.6rem 0.5rem; /* Réduction du padding pour plus d'espace */
+        font-size: 0.8rem; /* Réduction de la taille de police pour s'adapter aux petits écrans */
+    }
+}

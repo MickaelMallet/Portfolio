@@ -15,14 +15,19 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 2rem;
+    max-width: 960px;  
+    margin: 0 auto;  
 }
 
+
 .project-item {
+    flex: 0 0 calc(33.33% - 2rem);
     border: 1px solid #e0e0e0;
     padding: 1rem;
     border-radius: 5px;
     width: 300px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; 
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); 
 }
 .project-logo {
     width: 100px;  
@@ -61,7 +66,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; /* s'assurer que la modale est au-dessus des autres éléments */
+    z-index: 999; 
 }
 
 .modal-content {
@@ -72,6 +77,13 @@
     width: 80%;
     max-width: 800px;
 }
+.project-modal-logo {
+    width: 150px;  
+    height: auto;
+    display: block;
+    margin: 15px auto;  
+}
+
 .game-rules {
     border-top: 1px solid #e0e0e0;
     padding-top: 15px;
@@ -83,26 +95,53 @@
 }
 .tech-logos {
     display: flex;
-    gap: 15px; /* Espace entre les logos */
-    margin-top: 10px; /* Espace entre la description et les logos */
+    gap: 15px; 
+    margin-top: 10px; 
 }
 
 .tech-logo {
-    width: 30px; /* Largeur du logo */
-    height: auto; /* Hauteur basée sur la largeur pour garder les proportions */
-    filter: grayscale(100%); /* Par défaut en niveaux de gris */
-    transition: filter 0.3s; /* Transition pour le hover */
+    width: 30px; 
+    height: auto; 
+    filter: grayscale(100%); 
+    transition: filter 0.3s; 
 }
 
 .tech-logo:hover {
-    filter: grayscale(0%); /* Restaurer les couleurs originales au survol */
+    filter: grayscale(0%);
 }
 
-/* Styles par défaut pour le mode clair */
+
 .modal-content {
     background-color: #fff;
     color: #000;
-    /* autres styles... */
+
+}
+/* Styles pour les écrans tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .page-title {
+        font-size: 4rem; /* Réduction de la taille de la police du titre */
+    }
+    
+    .project-item {
+        flex: 0 0 calc(50% - 2rem); /* Deux projets par ligne */
+        width: 45%;
+    }
+}
+
+/* Styles pour les écrans mobiles */
+@media screen and (max-width: 767px) {
+    .page-title {
+        font-size: 3rem; /* Réduction encore plus prononcée de la taille de la police du titre */
+    }
+    
+    .project-item {
+        flex: 0 0 100%; /* Un projet par ligne */
+        width: 100%;
+    }
+    
+    .modal-content {
+        width: 90%; /* Ajustement de la largeur de la modale pour laisser un peu d'espace des deux côtés */
+    }
 }
 
 

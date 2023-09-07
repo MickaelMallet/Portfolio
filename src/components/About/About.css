@@ -23,3 +23,28 @@
 body[data-theme="dark"] .page-title {
     color: #fff; 
 }
+/* Styles pour les écrans tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .about-container h1 {
+        font-size: 4rem; /* Réduction de la taille de la police pour le titre */
+    }
+
+    .about-container p {
+        font-size: 1.8rem; /* Réduction de la taille de la police pour le contenu */
+    }
+}
+
+/* Styles pour les écrans mobiles */
+@media screen and (max-width: 767px) {
+    .about-container {
+        padding: 2rem 1rem; /* Réduction des paddings pour libérer de l'espace */
+    }
+
+    .about-container h1 {
+        font-size: 3rem; /* Réduction plus prononcée de la taille de la police pour le titre */
+    }
+
+    .about-container p {
+        font-size: 1.6rem; /* Réduction plus prononcée de la taille de la police pour le contenu */
+    }
+}

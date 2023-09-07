@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-// Initialisation du contexte avec une valeur par défaut
+
 export const DarkModeContext = createContext({
     darkMode: false,
     toggleDarkMode: () => {}
