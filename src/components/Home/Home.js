@@ -11,7 +11,7 @@ import './Home.css';
 const Home = () => {
     const { darkMode } = useContext(DarkModeContext);
     
-    const fullText = "Salut! Moi c'est Mika. Passionné par le développement web, je suis heureux de partager avec vous mes réalisations et mon parcours professionnel. N'hésitez pas à naviguer à travers les différentes sections pour en savoir plus sur moi et mes projets.";
+    const fullText = "Salut, je suis Mika. En plongeant dans le monde du développement web, j'ai découvert ma vocation pour le front-end. Fasciné depuis toujours par la culture web, ma curiosité et ma passion m'amènent à évoluer chaque jour. Explorez mon parcours et découvrez mes réalisations !";
     const [text, setText] = useState("");
     const [charIndex, setCharIndex] = useState(0);
 
@@ -31,7 +31,7 @@ const Home = () => {
 
             <section id="home-section" className="fullpage-section">
                 <div className="intro-section">
-                    <h1 className="page-title">"Hello There"</h1>
+                    <h1 className="page-title">Hello There</h1>
                     <p>{text}<span className="blinking-cursor">|</span></p>
                 </div>
             </section>
