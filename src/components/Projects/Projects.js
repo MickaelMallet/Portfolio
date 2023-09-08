@@ -28,7 +28,7 @@ const Projects = () => {
             logo: LogoReadOrNot,
             description: "Une application de gestion de livres pour les passionnés de lecture permettant de suivre les livres lus, de les recommander, de les trouver ou de les acheter, et plus encore. Développée avec React et Node.js et intégrant des API telles que data.bnf.fr et Gallica. Conçue pour aider les lecteurs à gérer et suivre leur bibliothèque numérique.",
             linkSite: "https://readornot.netlify.app/",
-            linkFront: "https://github.com/O-clock-Moai/projet-15-read-or-not-front",
+            linkFront: "https://github.com/MickaelMallet/ReadOrNot",
             linkBack: "https://github.com/MickaelMallet/ReadOrNot-Backend",
             technologies: [ReactLogo, SassLogo, JsLogo, NodeLogo],
             members: [" Whitney Toniolo ", " Jean-Marie Lapernat ", " Kilian Thoraval ", " Mickael Mallet "]
@@ -63,7 +63,6 @@ const Projects = () => {
         },
         {
             title: "Pierre Feuille Ciseaux Lézard Spock",
-            logo: SpockLogo,
             description: "Bienvenue dans le jeu Pierre Feuille Ciseaux Lézard Spock ! Ce jeu est une extension du jeu classique Pierre-Papier-Ciseaux, popularisé par la série télévisée 'The Big Bang Theory'. Le jeu introduit deux nouvelles options : Lézard et Spock, offrant des combinaisons de jeu encore plus intrigantes.",
             rules: [
                 "Pierre bat Ciseaux et Lézard",
