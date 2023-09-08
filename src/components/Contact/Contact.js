@@ -14,7 +14,7 @@ const Contact = () => {
                 
                 <div className="contact-items">
                     
-                    <a href="/CvMallet.pdf" download="CvMallet.pdf" className="contact-item">
+                    <a href="/CV_Mallet_M.pdf" download="CvMallet.pdf" className="contact-item">
                         <img src={CvIcon} alt="Cv Icon" className="contact-icon" />
                         <span>Téléchargez mon CV</span>
                     </a>
